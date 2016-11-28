@@ -1,0 +1,153 @@
+/*
+ * Colors
+ */
+$color-white: #fff;
+$color-black: #000;
+$color-orange: #ff5353;
+$color-red: #ff1818;
+$color-grey: #C5C5C5;
+
+/**
+ * Typography
+ */
+$font: 'Anton', sans-serif;
+$font-xlarge: 80px;
+$font-large: 60px;
+$font-medium: 40px;
+$font-small: 20px;
+
+/**
+ * Spacing
+ */
+$gutter: 10px;
+$gutter-quad: 4*$gutter;
+
+
+body {
+    background: $color-white;
+}
+
+.intro {
+    color: $color-black;
+
+    &__heading,
+    &__subheading,
+    &__link {
+        font-family: $font;
+        text-transform: uppercase;
+    }
+
+    &__heading {
+        color: $color-black;
+        margin-top: $gutter-quad;
+        margin-bottom: 0;
+        font-size: $font-xlarge;
+    }
+
+    &__subheading {
+        margin-top: 0;
+        line-height: 0.4;
+        font-size: $font-large;
+        color: $color-orange;
+    }
+
+    &__text {
+        position: relative;
+        margin-top: $gutter-quad;
+        font-size: $font-medium;
+    }
+
+    &__link {
+        color: $color-black;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 100%;
+            z-index: -1;
+            background: $color-black;
+            transform-origin: bottom;
+            transition: transform .5s ease-out;
+            height: 1px;
+        }
+
+        &:focus {
+            color: $color-orange;
+            outline: 1px solid $color-orange;
+        }
+
+        &:hover {
+            color: $color-orange;
+
+            &::before {
+                transform: scaleY(60);
+            }
+
+            + .intro__logo {
+
+                path {
+                    animation-play-state: running;
+                    stroke-dashoffset: 0;
+                }
+            }
+        }
+
+        &:active {
+            color: $color-red;
+        }
+    }
+
+    &__logo {
+        position: absolute;
+        width: 64px;
+        height: 64px;
+        fill: $color-white;
+        stroke: $color-black;
+        transition: fill .5s 1.5s ease-out;
+
+        path {
+            stroke-width: 0.4px;
+            stroke-dasharray: 100;
+            transition: stroke-dashoffset 1.5s ease-out;
+        }
+
+        &_github {
+            stroke-dashoffset: -95;
+        }
+
+        &_codepen {
+            stroke-dashoffset: -50;
+        }
+
+        &_linkedin {
+            stroke-dashoffset: -65;
+        }
+    }
+}
+
+.quote {
+    position: absolute;
+    top: 80%;
+    right: 10%;
+
+    &__message {
+        font: italic 30px 'Pacifico', cursive;
+        color: $color-grey;
+        margin-bottom: 10px;
+
+        p {
+            line-height: 1;
+            margin-bottom: 0;
+        }
+    }
+
+    &__author {
+        font-size: 20px;
+        color: $color-grey;
+    }
+}
+

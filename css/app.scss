@@ -14,7 +14,6 @@ $font: 'Anton', sans-serif;
 $font-xlarge: 80px;
 $font-large: 60px;
 $font-medium: 40px;
-$font-small: 20px;
 
 /**
  * Spacing
@@ -128,26 +127,3 @@ body {
         }
     }
 }
-
-.quote {
-    position: absolute;
-    top: 80%;
-    right: 10%;
-
-    &__message {
-        font: italic 30px 'Pacifico', cursive;
-        color: $color-grey;
-        margin-bottom: 10px;
-
-        p {
-            line-height: 1;
-            margin-bottom: 0;
-        }
-    }
-
-    &__author {
-        font-size: 20px;
-        color: $color-grey;
-    }
-}
-

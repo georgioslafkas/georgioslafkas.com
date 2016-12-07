@@ -1,1 +1,1 @@
-require("../css/app.scss");
+require("../assets/styles/app.scss");

@@ -1,3 +1,5 @@
+@import 'foundation.min.css';
+
 /*
  * Colors
  */
@@ -8,12 +10,12 @@ $color-red: #ff1818;
 $color-grey: #C5C5C5;
 
 /**
- * Typography
+ * Responsive Typography
  */
 $font: 'Anton', sans-serif;
-$font-xlarge: 80px;
-$font-large: 60px;
-$font-medium: 40px;
+$font-large: 5.063rem;
+$font-medium: 3.375em;
+$font-small: 2.25rem;
 
 /**
  * Spacing
@@ -40,20 +42,23 @@ body {
         color: $color-black;
         margin-top: $gutter-quad;
         margin-bottom: 0;
-        font-size: $font-xlarge;
+        font-size: $font-large;
     }
 
     &__subheading {
         margin-top: 0;
         line-height: 0.4;
-        font-size: $font-large;
+        font-size: $font-medium;
         color: $color-orange;
     }
 
     &__text {
-        position: relative;
         margin-top: $gutter-quad;
-        font-size: $font-medium;
+        font-size: $font-small;
+
+        p {
+            position: relative;
+        }
     }
 
     &__link {
@@ -102,6 +107,7 @@ body {
 
     &__logo {
         position: absolute;
+        bottom: 0;
         width: 64px;
         height: 64px;
         fill: $color-white;

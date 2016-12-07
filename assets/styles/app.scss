@@ -36,6 +36,7 @@ body {
     &__link {
         font-family: $font;
         text-transform: uppercase;
+        line-height: 1;
     }
 
     &__heading {
@@ -47,7 +48,6 @@ body {
 
     &__subheading {
         margin-top: 0;
-        line-height: 0.4;
         font-size: $font-medium;
         color: $color-orange;
     }

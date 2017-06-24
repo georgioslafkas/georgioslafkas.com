@@ -11,7 +11,11 @@ module.exports = {
         loaders: [
             {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract(["css", "sass"])
+                loader: ExtractTextPlugin.extract(["css?sourceMap", "sass?sourceMap"])
+            },
+            {
+                test: /\.(png|jpg|jpeg)$/,
+                loader: require.resolve('url-loader')
             }
         ]
     },
